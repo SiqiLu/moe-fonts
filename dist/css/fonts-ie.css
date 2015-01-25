@@ -68,9 +68,6 @@
   font-weight: 800;
   font-style: italic;
 }
-body {
-  font-family: "华文细黑", "Microsoft YaHei", "微软雅黑", SimHei, Heiti, "黑体", "FontAwesome", sans-serif;
-}
 .font-hei {
   font-family: "华文细黑", "Microsoft YaHei", "微软雅黑", SimHei, Heiti, "黑体", "FontAwesome", sans-serif;
 }
@@ -80,6 +77,18 @@ body {
 .font-kai {
   font-family: Kai, "Kaiti SC", KaiTi, BiauKai, "FontAwesome", serif;
 }
-.font-mono {
+.font-monospace {
   font-family: Monaco, Menlo, Consolas, "Courier New", "FontAwesome", monospace;
+}
+body {
+  font-family: "华文细黑", "Microsoft YaHei", "微软雅黑", SimHei, Heiti, "黑体", "FontAwesome", sans-serif;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: Monaco, Menlo, Consolas, "Courier New", "FontAwesome", monospace;
+}
+.tooltip {
+  font-family: "华文细黑", "Microsoft YaHei", "微软雅黑", SimHei, Heiti, "黑体", "FontAwesome", sans-serif;
 }
