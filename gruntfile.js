@@ -108,4 +108,5 @@
     grunt.loadNpmTasks('grunt-bump');
 
     grunt.registerTask('default', ['clean', 'jshint', 'lesslint', 'less', 'autoprefixer', 'cssmin', 'copy']);
+    grunt.registerTask('release', ['bump']);
 };
