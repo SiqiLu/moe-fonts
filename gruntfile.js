@@ -87,10 +87,10 @@
                 commit: true,
                 commitMessage: 'Release %VERSION%',
                 commitFiles: ['-a'],
-                createTag: false,
+                createTag: true,
                 tagName: '%VERSION%',
                 tagMessage: 'Version %VERSION%',
-                push: false,
+                push: true,
                 pushTo: 'upstream',
                 gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d',
                 globalReplace: false

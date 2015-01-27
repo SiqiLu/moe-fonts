@@ -1,6 +1,6 @@
 {
   "name": "moe-fonts",
-  "version": "0.4.3",
+  "version": "0.4.1",
   "description": "moe font",
   "main": "fonts.css",
   "scripts": {
