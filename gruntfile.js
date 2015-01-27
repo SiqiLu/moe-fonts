@@ -91,7 +91,7 @@
                 tagName: '%VERSION%',
                 tagMessage: 'Version %VERSION%',
                 push: true,
-                pushTo: 'upstream',
+                pushTo: 'origin master',
                 gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d',
                 globalReplace: false
             }
