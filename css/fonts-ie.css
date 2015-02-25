@@ -69,26 +69,26 @@
   font-style: italic;
 }
 .font-hei {
-  font-family: "华文细黑", "Microsoft YaHei", "微软雅黑", SimHei, Heiti, "黑体", "FontAwesome", sans-serif;
+  font-family: "华文细黑", "Microsoft YaHei", "微软雅黑", SimHei, Heiti, "黑体", sans-serif;
 }
 .font-song {
-  font-family: "Songti SC", SimSun, "宋体", STSong, "FontAwesome", serif;
+  font-family: "Songti SC", SimSun, "宋体", STSong, serif;
 }
 .font-kai {
-  font-family: Kai, "Kaiti SC", KaiTi, BiauKai, "FontAwesome", serif;
+  font-family: Kai, "Kaiti SC", KaiTi, BiauKai, serif;
 }
 .font-monospace {
-  font-family: Monaco, Menlo, Consolas, "Courier New", "FontAwesome", monospace;
+  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
 }
 body {
-  font-family: "华文细黑", "Microsoft YaHei", "微软雅黑", SimHei, Heiti, "黑体", "FontAwesome", sans-serif;
+  font-family: "Songti SC", SimSun, "宋体", STSong, serif;
 }
 code,
 kbd,
 pre,
 samp {
-  font-family: Monaco, Menlo, Consolas, "Courier New", "FontAwesome", monospace;
+  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
 }
 .tooltip {
-  font-family: "华文细黑", "Microsoft YaHei", "微软雅黑", SimHei, Heiti, "黑体", "FontAwesome", sans-serif;
+  font-family: "Songti SC", SimSun, "宋体", STSong, serif;
 }
