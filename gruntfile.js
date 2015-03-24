@@ -1,24 +1,18 @@
 ﻿module.exports = function (grunt) {
+  'use strict';
 
   grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
-    bower: grunt.file.readJSON('bower.json'),
-
-    clean: ["css/", "dist/"],
-
-    jshint: {
-      grunt: ['Gruntfile.js']
-    },
+    clean: ['css/', 'dist/'],
 
     lesslint: {
       options: {
         csslint: {
-          "font-faces": false
+          'font-faces': false
         }
       },
       core: {
         src: ['less/*.less']
-      },
+      }
     },
 
     less: {
@@ -28,8 +22,8 @@
       },
       core: {
         files: {
-          "css/fonts.css": "less/fonts.less",
-          "css/fonts-ie.css": "less/fonts-ie.less"
+          'css/fonts.css': 'less/fonts.less',
+          'css/fonts-ie.css': 'less/fonts-ie.less'
         }
       }
     },
@@ -74,8 +68,42 @@
           expand: true,
           src: ['fonts/**'],
           dest: 'dist/'
-        }],
+        }]
+      }
+    },
+
+    jshint: {
+      options: {
+        jshintrc: '.jshintrc'
       },
+      grunt: {
+        src: ['Gruntfile.js', 'grunt/**/*.js']
+      }
+    },
+
+    jscs: {
+      options: {
+        config: '.jscsrc'
+      },
+      grunt: {
+        src: '<%= jshint.grunt.src %>'
+      }
+    },
+
+    exec: {
+      options: {
+        stdout: true,
+        stderr: true
+      },
+      npmUpdate: {
+        command: 'npm update'
+      },
+      npmInstall: {
+        command: 'npm install'
+      },
+      npmPublish: {
+        command: 'npm publish'
+      }
     },
 
     bump: {
@@ -96,15 +124,15 @@
     }
   });
 
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-lesslint');
-  grunt.loadNpmTasks('grunt-contrib-less');
-  grunt.loadNpmTasks('grunt-autoprefixer');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-bump');
+  grunt.registerTask('default', ['js', 'clean', 'jshint', 'lesslint', 'less', 'autoprefixer', 'cssmin', 'copy']);
+  grunt.registerTask('js', ['jshint', 'jscs']);
+  grunt.registerTask('release', ['exec:npmUpdate', 'default', 'bump']);
+  grunt.registerTask('release-minor', ['exec:npmUpdate', 'default', 'bump:minor']);
+  grunt.registerTask('release-major', ['exec:npmUpdate', 'default', 'bump:major']);
 
-  grunt.registerTask('default', ['clean', 'jshint', 'lesslint', 'less', 'autoprefixer', 'cssmin', 'copy']);
-  grunt.registerTask('release', ['default', 'bump']);
+  // These plugins provide necessary tasks.
+  require('load-grunt-tasks')(grunt, {
+    scope: 'devDependencies'
+  });
+  require('time-grunt')(grunt);
 };
